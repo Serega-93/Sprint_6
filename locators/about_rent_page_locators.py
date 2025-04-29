@@ -4,13 +4,8 @@ from selenium.webdriver.common.by import By
 class AboutRentPageLocators:
     DELIVERY_DATE_FIELD = [By.XPATH, '//input[@placeholder="* Когда привезти самокат"]'] # поле "дата доставки самоката"
     RENTAL_PERIOD_FIELD = [By.XPATH, '//div[@class="Dropdown-placeholder"]'] # поле "срок аренды"
-    DAY_VALUE = [By.XPATH, '//div[text()="сутки"]'] # сутки
     TWO_DAYS_VALUE = [By.XPATH, '//div[text()="двое суток"]'] # двое суток
-    THREE_DAYS_VALUE = [By.XPATH, '//div[text()="трое суток"]'] # трое суток
-    FOUR_DAYS_VALUE = [By.XPATH, '//div[text()="четверо суток"]']  # четверо суток
-    FIVE_DAYS_VALUE = [By.XPATH, '//div[text()="пятеро суток"]']  # пятеро суток
     SIX_DAYS_VALUE = [By.XPATH, '//div[text()="шестеро суток"]']  # шестеро суток
-    SEVEN_DAYS_VALUE = [By.XPATH, '//div[text()="семеро суток"]']  # семеро суток
     SCOOTER_COLOR_FIELD = [By.XPATH, '//div[@class="Order_Title__3EKne"]'] # поле "цвет самоката"
     BLACK_COLOR = [By.ID, 'black'] # чёрный жемчуг
     GREY_COLOR = [By.ID, 'grey'] # серая безысходность
