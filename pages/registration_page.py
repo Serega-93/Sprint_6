@@ -33,6 +33,6 @@ class RegistrationScooterPage:
         self.driver.find_element(*RegistrationScooterPageLocators.NEXT_BUTTON).click()
 
     def wait_element_next_button(self):
-        WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located(*RegistrationScooterPageLocators.
+        WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located(RegistrationScooterPageLocators.
                                                                                      NEXT_BUTTON))
 

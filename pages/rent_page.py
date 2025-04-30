@@ -42,8 +42,8 @@ class AboutRentPage:
         return self.driver.find_element(*AboutRentPageLocators.SUCCESSFUL_REGISTRATION_POPUP).text()
 
     def wait_element_button_yes(self):
-        WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located(*AboutRentPageLocators.BUTTON_YES))
+        WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located(AboutRentPageLocators.BUTTON_YES))
 
     def wait_element_successful_registration_popup(self):
-        WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located(*AboutRentPageLocators.
+        WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located(AboutRentPageLocators.
                                                                                     SUCCESSFUL_REGISTRATION_POPUP))
