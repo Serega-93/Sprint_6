@@ -1,49 +1,45 @@
 from locators.about_rent_page_locators import AboutRentPageLocators
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+
+import allure
+from pages.base_page import BasePage
 
 
-class AboutRentPage:
+class AboutRentPage(BasePage):
 
-    def __init__(self, driver):
-        self.driver = driver
+    @allure.step("Выбираем дату доставки")
+    def choosing_delivery_date(self, date):
+        self.send_keys_to_input(AboutRentPageLocators.DELIVERY_DATE_FIELD, date)
 
-    def set_delivery_date(self, date):
-        self.driver.find_element(*AboutRentPageLocators.DELIVERY_DATE_FIELD).send_keys(date)
+    @allure.step("Выбираем срок аренды - двое суток")
+    def choosing_rental_period_two_days(self):
+        self.click_for_element(AboutRentPageLocators.RENTAL_PERIOD_FIELD)
+        self.click_for_element(AboutRentPageLocators.TWO_DAYS_VALUE)
 
-    def click_rental_period(self):
-        self.driver.find_element(*AboutRentPageLocators.RENTAL_PERIOD_FIELD).click()
+    @allure.step("Выбираем срок аренды - шестеро суток")
+    def choosing_rental_period_six_days(self):
+        self.click_for_element(AboutRentPageLocators.RENTAL_PERIOD_FIELD)
+        self.click_for_element(AboutRentPageLocators.SIX_DAYS_VALUE)
 
-    def choice_rental_period_two_days(self):
-        self.driver.find_element(*AboutRentPageLocators.TWO_DAYS_VALUE).click()
+    @allure.step("Выбираем цвет самоката - чёрный жемчуг")
+    def choosing_black_color(self):
+        self.click_for_element(AboutRentPageLocators.BLACK_COLOR)
 
-    def choice_rental_period_six_days(self):
-        self.driver.find_element(*AboutRentPageLocators.SIX_DAYS_VALUE).click()
+    @allure.step("Выбираем цвет самоката - серая безысходность")
+    def choosing_grey_color(self):
+        self.click_for_element(AboutRentPageLocators.GREY_COLOR)
 
-    def click_scooter_color(self):
-        self.driver.find_element(*AboutRentPageLocators.SCOOTER_COLOR_FIELD).click()
+    @allure.step("Заполняем поле Комментарий курьеру")
+    def fill_input_comment(self, comment):
+        self.send_keys_to_input(AboutRentPageLocators.COMMENT_FIELD, comment)
 
-    def choice_black_color(self):
-        self.driver.find_element(*AboutRentPageLocators.BLACK_COLOR).click()
+    @allure.step("Кликаем по кнопке Заказать")
+    def click_on_order_button(self):
+        self.click_for_element(AboutRentPageLocators.BUTTON_ORDER)
 
-    def choice_grey_color(self):
-        self.driver.find_element(*AboutRentPageLocators.GREY_COLOR).click()
+    @allure.step("Кликаем по кнопке подтверждения заказа - Да")
+    def click_on_button_yes(self):
+        self.click_for_element(AboutRentPageLocators.BUTTON_YES)
 
-    def set_comment(self, comment):
-        self.driver.find_element(*AboutRentPageLocators.COMMENT_FIELD).send_keys(comment)
-
-    def click_button_order(self):
-        self.driver.find_element(*AboutRentPageLocators.BUTTON_ORDER).click()
-
-    def click_button_yes(self):
-        self.driver.find_element(*AboutRentPageLocators.BUTTON_YES).click()
-
-    def receive_text_successful_registration_popup(self):
-        return self.driver.find_element(*AboutRentPageLocators.SUCCESSFUL_REGISTRATION_POPUP).text()
-
-    def wait_element_button_yes(self):
-        WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located(AboutRentPageLocators.BUTTON_YES))
-
-    def wait_element_successful_registration_popup(self):
-        WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located(AboutRentPageLocators.
-                                                                                    SUCCESSFUL_REGISTRATION_POPUP))
+    @allure.step("Получаем текст подтверждения заказа")
+    def get_text_successful_registration(self):
+        self.get_text_on_element(AboutRentPageLocators.SUCCESSFUL_REGISTRATION_POPUP)

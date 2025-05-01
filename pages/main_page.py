@@ -1,6 +1,5 @@
 from locators.main_page_locators import MainPageLocators
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+
 import allure
 from pages.base_page import BasePage
 
@@ -25,4 +24,3 @@ class MainPageYandexScooter(BasePage):
     def getting_text_drop_down_list(self, number_text):
         locator_text = MainPageLocators.number_text(number_text)
         return self.get_text_on_element(locator_text)
-

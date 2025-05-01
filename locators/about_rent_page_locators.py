@@ -6,9 +6,8 @@ class AboutRentPageLocators:
     RENTAL_PERIOD_FIELD = [By.XPATH, '//div[@class="Dropdown-placeholder"]'] # поле "срок аренды"
     TWO_DAYS_VALUE = [By.XPATH, '//div[text()="двое суток"]'] # двое суток
     SIX_DAYS_VALUE = [By.XPATH, '//div[text()="шестеро суток"]']  # шестеро суток
-    SCOOTER_COLOR_FIELD = [By.XPATH, '//div[@class="Order_Title__3EKne"]'] # поле "цвет самоката"
-    BLACK_COLOR = [By.ID, 'black'] # чёрный жемчуг
-    GREY_COLOR = [By.ID, 'grey'] # серая безысходность
+    BLACK_COLOR = [By.ID, 'black'] #  цвет самоката "чёрный жемчуг"
+    GREY_COLOR = [By.ID, 'grey'] # цвет самоката "серая безысходность"
     COMMENT_FIELD = [By.XPATH, '//input[@placeholder="Комментарий для курьера"]'] # поле "Комментарий для курьера"
     BUTTON_ORDER = [By.XPATH, '//button[@class="Button_Button__ra12g Button_Middle__1CSJM"]'] # кнопка "Заказать" под формой
     BUTTON_YES = [By.XPATH, '//button[@class="Button_Button__ra12g Button_Middle__1CSJM" and text()="Да"]'] # кнопка подтверждения заказа "Да"

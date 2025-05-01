@@ -1,38 +1,39 @@
 from locators.registration_scooter_page_locators import RegistrationScooterPageLocators
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+
+import allure
+from pages.base_page import BasePage
 
 
-class RegistrationScooterPage:
+class RegistrationScooterPage(BasePage):
 
-    def __init__(self, driver):
-        self.driver = driver
+    @allure.step("Заполняем поле Имя")
+    def fill_input_name(self, name):
+        self.send_keys_to_input(RegistrationScooterPageLocators.NAME_FIELD, name)
 
-    def click_logo_yandex(self):
-        self.driver.find_element(*RegistrationScooterPageLocators.LOGO_YANDEX).click()
+    @allure.step("Заполняем поле Фамилия")
+    def fill_input_last_name(self, last_name):
+        self.send_keys_to_input(RegistrationScooterPageLocators.LAST_NAME_FIELD, last_name)
 
-    def click_logo_scooter(self):
-        self.driver.find_element(*RegistrationScooterPageLocators.LOGO_SCOOTER).click()
+    @allure.step("Заполняем поле Адрес")
+    def fill_input_address(self, address):
+        self.send_keys_to_input(RegistrationScooterPageLocators.ADDRESS_FIELD, address)
 
-    def set_name(self, name):
-        self.driver.find_element(*RegistrationScooterPageLocators.NAME_FIELD).send_keys(name)
+    @allure.step("Заполняем поле Станция метро")
+    def fill_input_metro_station(self, station):
+        self.send_keys_to_input(RegistrationScooterPageLocators.METRO_STATION_FIELD, station)
 
-    def set_last_name(self, last_name):
-        self.driver.find_element(*RegistrationScooterPageLocators.LAST_NAME_FIELD).send_keys(last_name)
+    @allure.step("Заполняем поле Телефон")
+    def fill_input_phone(self, phone):
+        self.send_keys_to_input(RegistrationScooterPageLocators.PHONE_FIELD, phone)
 
-    def set_address(self, address):
-        self.driver.find_element(*RegistrationScooterPageLocators.ADDRESS_FIELD).send_keys(address)
+    @allure.step("Кликаем кнопку Далее")
+    def click_on_button_next(self):
+        self.click_for_element(RegistrationScooterPageLocators.NEXT_BUTTON)
 
-    def set_metro_station(self, metro):
-        self.driver.find_element(*RegistrationScooterPageLocators.METRO_STATION_FIELD).send_keys(metro)
+    @allure.step("Кликаем по логотипу Самокат")
+    def click_on_logo_scooter(self):
+        self.click_for_element(RegistrationScooterPageLocators.LOGO_SCOOTER)
 
-    def set_phone(self, phone):
-        self.driver.find_element(*RegistrationScooterPageLocators.PHONE_FIELD).send_keys(phone)
-
-    def click_next_button(self):
-        self.driver.find_element(*RegistrationScooterPageLocators.NEXT_BUTTON).click()
-
-    def wait_element_next_button(self):
-        WebDriverWait(self.driver, 5).until(EC.visibility_of_element_located(RegistrationScooterPageLocators.
-                                                                                     NEXT_BUTTON))
-
+    @allure.step("Кликаем по логотипу Яндекс")
+    def click_on_logo_yandex(self):
+        self.click_for_element(RegistrationScooterPageLocators.LOGO_YANDEX)
