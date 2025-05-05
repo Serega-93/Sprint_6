@@ -25,7 +25,7 @@ class BasePage:
         element.click()
         return element
 
-    @allure.step("Кликаем на элемент")
+    @allure.step("Кликаем на элемент с помощью скрипта")
     def click_for_element_with_scripts(self, locator, timeout=10):
         element = self.wait_for_element(locator, timeout)
         self.driver.execute_script("arguments[0].click();", element)

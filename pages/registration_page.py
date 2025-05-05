@@ -30,11 +30,3 @@ class RegistrationScooterPage(BasePage):
     @allure.step("Кликаем кнопку Далее")
     def click_on_button_next(self):
         self.click_for_element(RegistrationScooterPageLocators.NEXT_BUTTON)
-
-    @allure.step("Кликаем по логотипу Самокат")
-    def click_on_logo_scooter(self):
-        self.click_for_element(RegistrationScooterPageLocators.LOGO_SCOOTER)
-
-    @allure.step("Кликаем по логотипу Яндекс")
-    def click_on_logo_yandex(self):
-        self.click_for_element(RegistrationScooterPageLocators.LOGO_YANDEX)
