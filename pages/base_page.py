@@ -11,6 +11,14 @@ class BasePage:
     def wait_for_element(self, locator, timeout=10):
         return WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(locator))
 
+    @allure.step("Получаем url сайта")
+    def switch_and_get_url(self, expected_url, timeout=10):
+        WebDriverWait(self.driver, timeout).until(EC.number_of_windows_to_be(2))
+        self.driver.switch_to.window(self.driver.window_handles[-1])
+        WebDriverWait(self.driver, timeout).until(EC.url_to_be(expected_url))
+        current_url = self.driver.current_url
+        return current_url
+
     @allure.step("Кликаем на элемент")
     def click_for_element(self, locator, timeout=10):
         element = self.wait_for_element(locator, timeout)

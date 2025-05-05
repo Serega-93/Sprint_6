@@ -6,10 +6,10 @@ from pages.rent_page import AboutRentPage
 from helpers import generate_registration_data, tomorrow_date
 
 
-class TestRegistrationScooter:
+class TestSuccessfulRegistrationScooter:
 
     @allure.title("Проверяем успешную регистрацию через верхнею кнопку Заказать")
-    def test_registration_for_top_order_button(self, driver):
+    def test_successful_registration_for_top_order_button(self, driver):
         main_page = MainPageYandexScooter(driver)
         registration_page = RegistrationScooterPage(driver)
         rent_page = AboutRentPage(driver)
@@ -34,7 +34,7 @@ class TestRegistrationScooter:
         assert expected_text in actual_text
 
     @allure.title("Проверяем успешную регистрацию через нижнею кнопку Заказать")
-    def test_registration_for_bottom_order_button(self, driver):
+    def test_successful_registration_for_bottom_order_button(self, driver):
         main_page = MainPageYandexScooter(driver)
         registration_page = RegistrationScooterPage(driver)
         rent_page = AboutRentPage(driver)

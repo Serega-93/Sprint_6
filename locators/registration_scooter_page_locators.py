@@ -2,8 +2,6 @@ from selenium.webdriver.common.by import By
 
 
 class RegistrationScooterPageLocators:
-    LOGO_YANDEX = [By.XPATH, '//img[@alt = "Yandex"]'] # логотип "Яндекс"
-    LOGO_SCOOTER = [By.XPATH, '//img[@alt = "Scooter"]'] # логотип "Самокат"
     NAME_FIELD = [By.XPATH, '//input[@placeholder="* Имя"]'] # поле ввода "Имя"
     LAST_NAME_FIELD = [By.XPATH, '//input[@placeholder="* Фамилия"]']  # поле ввода "Фамилия"
     ADDRESS_FIELD = [By.XPATH, '//input[@placeholder="* Адрес: куда привезти заказ"]'] # поле ввода "Адрес"
