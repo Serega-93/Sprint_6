@@ -35,7 +35,7 @@
 | test_successful_logo_click_through.py | Тесты на проверку перехода по логотипам               |
 | conftest.py                           | Фикстуры                                              |
 | helpers.py                            | Хэлпер для тела запросов                              |
-| data.py                               | Файл с URL и body запросов                            |
+| data.py                               | Файл с body запросов                                  |
 | requirements.txt                      | Файл с зависимостями                                  |
 | allure_results.dir                    | Папка с отчетами Allure                               |
 
