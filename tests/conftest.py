@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 import pytest
-from url import main_site
+from curl import main_site
 
 
 @pytest.fixture

@@ -1,7 +1,7 @@
 import allure
 from pages.base_page import BasePage
 from locators.header_page_locators import HeaderPageLocators
-from url import yandex_logo_site
+from curl import yandex_logo_site
 
 
 class HeaderPage(BasePage):

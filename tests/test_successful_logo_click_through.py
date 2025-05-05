@@ -1,5 +1,5 @@
 import allure
-from url import yandex_logo_site, main_site
+from curl import yandex_logo_site, main_site
 from pages.main_page import MainPageYandexScooter
 from pages.header_page import HeaderPage
 
