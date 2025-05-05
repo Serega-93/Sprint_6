@@ -1,3 +1,5 @@
+from selenium.webdriver import Keys
+
 from locators.about_rent_page_locators import AboutRentPageLocators
 
 import allure
@@ -8,7 +10,8 @@ class AboutRentPage(BasePage):
 
     @allure.step("Выбираем дату доставки")
     def choosing_delivery_date(self, date):
-        self.send_keys_to_input(AboutRentPageLocators.DELIVERY_DATE_FIELD, date)
+        element = self.send_keys_to_input(AboutRentPageLocators.DELIVERY_DATE_FIELD, date)
+        element.send_keys(Keys.ENTER)
 
     @allure.step("Выбираем срок аренды - двое суток")
     def choosing_rental_period_two_days(self):
@@ -42,4 +45,4 @@ class AboutRentPage(BasePage):
 
     @allure.step("Получаем текст подтверждения заказа")
     def get_text_successful_registration(self):
-        self.get_text_on_element(AboutRentPageLocators.SUCCESSFUL_REGISTRATION_POPUP)
+        return self.get_text_on_element(AboutRentPageLocators.SUCCESSFUL_REGISTRATION_POPUP)

@@ -18,9 +18,10 @@ class RegistrationScooterPage(BasePage):
     def fill_input_address(self, address):
         self.send_keys_to_input(RegistrationScooterPageLocators.ADDRESS_FIELD, address)
 
-    @allure.step("Заполняем поле Станция метро")
-    def fill_input_metro_station(self, station):
-        self.send_keys_to_input(RegistrationScooterPageLocators.METRO_STATION_FIELD, station)
+    @allure.step("Выбираем  Станцию метро Сокольники")
+    def click_input_metro_station(self):
+        self.click_for_element(RegistrationScooterPageLocators.METRO_STATION_FIELD)
+        self.click_for_element(RegistrationScooterPageLocators.METRO_STATION_SOCOLNIKI)
 
     @allure.step("Заполняем поле Телефон")
     def fill_input_phone(self, phone):
