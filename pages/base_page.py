@@ -12,6 +12,11 @@ class BasePage:
         return WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(locator))
 
     @allure.step("Получаем url сайта")
+    def get_url_site(self):
+        WebDriverWait(self.driver, 10).until(EC.url_changes(''))
+        return self.driver.current_url
+
+    @allure.step("Переключаемся и загружаем url сайта")
     def switch_and_get_url(self, expected_url, timeout=10):
         WebDriverWait(self.driver, timeout).until(EC.number_of_windows_to_be(2))
         self.driver.switch_to.window(self.driver.window_handles[-1])

@@ -1,5 +1,5 @@
 import allure
-
+from data import SUCCESSFUL_REGISTRATION_TEXT
 from pages.main_page import MainPageYandexScooter
 from pages.registration_page import RegistrationScooterPage
 from pages.rent_page import AboutRentPage
@@ -30,7 +30,7 @@ class TestSuccessfulRegistrationScooter:
         rent_page.click_on_order_button()
         rent_page.click_on_button_yes()
         actual_text = rent_page.get_text_successful_registration()
-        expected_text = "Заказ оформлен"
+        expected_text = SUCCESSFUL_REGISTRATION_TEXT
         assert expected_text in actual_text
 
     @allure.title("Проверяем успешную регистрацию через нижнею кнопку Заказать")
@@ -55,6 +55,6 @@ class TestSuccessfulRegistrationScooter:
         rent_page.click_on_order_button()
         rent_page.click_on_button_yes()
         actual_text = rent_page.get_text_successful_registration()
-        expected_text = "Заказ оформлен"
+        expected_text = SUCCESSFUL_REGISTRATION_TEXT
         assert expected_text in actual_text
 
